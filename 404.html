@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ERROR 404</title>
+	<style>
+    :root {
+      --green-dark: #2F4F3A;
+      --green-light: #76A96F;
+      --blue-gray: #8FA7B9;
+      --white-soft: #F7F5F2;
+      --black: #0D222A;
+
+      --radius: 16px;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      --transition: 0.5s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+    /*----- Header -----*/
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #FFFFFFFF;
+      padding: 14px 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 100;
+    }
+
+    header img {
+      height: 85px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+
+      padding: 6px 2px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--green-light);
+      transform: translateY(-2px);
+    }
+    /*----------- 404 ---------- */
+    section {
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+      background: var(--white-soft);
+
+      }
+
+    .conteiner404 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .conteiner404 h1 {
+      font-size: 50px;
+    }
+    .conteiner404 img {
+      width: 60%;
+      height: auto;
+    }
+
+    .wrong {
+      z-index: 1000;
+      background: white;
+      border-radius: var(--radius);
+      padding: 70px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: left; 
+      }
+	</style>
+</head>
+<body>
+<header>
+		<img src="img/True-North.png" alt="NorwayBack">
+			<nav>
+				<a href="index-en.html">Home</a>
+				<a href="program-en.html">Programs</a>
+				<a href="index-ru.html">Ru</a>
+				<a href="index-en.html">En</a>
+			</nav>
+</header>
+<section>
+  <div class="conteiner404">
+      <div class="wrong">
+      <h1>OOOOOOPS </h1>
+      <h1>404</h1>
+      <h3>Something went wrong</h3>
+     </div>
+    <img src="img/man-in-chain.png">
+  </div>
+</section>
+</body>
+</html>

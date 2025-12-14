@@ -1,0 +1,374 @@
+:root {
+  --green-dark: #2F4F3A;
+  --green-light: #76A96F;
+  --blue-gray: #8FA7B9;
+  --white-soft: #F7F5F2;
+  --black: #0D222A;
+
+  --radius: 16px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --transition: 0.5s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* ----------- HEADER  ------------- */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #FFFFFFFF;
+  padding: 14px 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+header img {
+  height: 85px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+
+  padding: 6px 2px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--green-light);
+  transform: translateY(-2px);
+}
+
+#enter {
+  background: var(--green-dark);
+  padding: 8px 18px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+#enter:hover {
+  background: var(--green-light);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+
+#backIMG {
+  width: 100%;
+  margin-top: 80px;
+}
+
+/* ----------- MAIN ----------- */
+
+main {
+  background: var(--white-soft);
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+main section {
+  background: white;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+main h1 {
+  color: var(--green-dark);
+  margin-bottom: 12px;
+}
+
+main p {
+  color: #333;
+  line-height: 1.7;
+}
+
+/* ------- PROGRAMS SECTION ------- */
+
+.programs {
+  padding: 70px 40px;
+  background: var(--white-soft);
+  text-align: center;
+}
+
+.programs h2 {
+  font-size: 36px;
+  color: var(--green-dark);
+  margin-bottom: 40px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 32px;
+}
+
+.program-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.program-card h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--green-dark);
+}
+
+/* ----- table ----- */
+
+.program-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.program-card th {
+  text-align: left;
+  padding: 8px 0;
+  color: var(--green-dark);
+  width: 40%;
+  font-weight: 600;
+}
+
+.program-card td {
+  padding: 8px 0;
+  color: #444;
+}
+
+/* ----- button ----- */
+
+.program-btn {
+  display: inline-block;
+  background: var(--green-dark);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.program-btn:hover {
+  background: var(--green-light);
+  color: var(--black);
+  transform: translateY(-3px);
+}
+
+/* ------------ FOOTER -------------- */
+
+.footer {
+  background: var(--black);
+  color: white;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  position: relative;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-block h3 {
+  color: var(--green-light);
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.footer-block a {
+  color: var(--blue-gray);
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.footer-block a:hover {
+  color: var(--green-light);
+  transform: translateX(4px);
+}
+
+/* нижняя тонкая линия */
+.footer-bottom {
+  grid-column: 1 / -1;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 14px;
+  color: var(--blue-gray);
+  text-align: center;
+}
+
+
+/* ------------- Анимации -------------- */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* =============  Адопт под мобилки ============= */
+@media (max-width: 880px) {
+
+  /* BODY */
+  body {
+    gap: 40px;
+    text-align: left;
+  }
+
+  /* HEADER */
+  header {
+    padding: 10px 20px;
+  }
+
+  header img {
+    height: 40px;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  #enter {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  #backIMG {
+    width: 100%;
+    margin-top: 70px;
+    border-radius: 0;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  main section {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  main h1 {
+    font-size: 24px;
+  }
+
+  main p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  #norwayInMain img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  aside {
+    padding: 20px;
+  }
+
+  #holiday {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  #tourlist {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #tourlist div {
+    padding: 20px;
+  }
+
+  #tourlist h1 {
+    font-size: 20px;
+  }
+
+  #tourlist h3 {
+    font-size: 16px;
+  }
+
+  #tourlist p {
+    font-size: 15px;
+  }
+
+  /* FOOTER */
+  footer {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  footer img {
+    width: 180px;
+    margin-bottom: 20px;
+  }
+
+  footer div {
+    gap: 6px;
+  }
+
+  footer a {
+    font-size: 15px;
+  }
+
+  [data-animate] {
+    transform: translateY(20px);
+  }
+}
+
+

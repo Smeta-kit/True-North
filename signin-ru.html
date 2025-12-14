@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Вход — True North Travels</title>
+  <link rel="stylesheet" href="signin.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header>
+		<img src="img/True-North.png" alt="NorwayBack">
+			<nav>
+				<a href="index-ru.html">Домой</a>
+				<a href="program-ru.html">Программа</a>
+				<a href="signin-ru.html">Руc</a>
+				<a href="signin-en.html">Англ</a>
+			</nav>	
+</header>
+
+<main class="reg-container">
+  <h1>Вход в аккаунт</h1>
+  <p class="reg-subtitle">Рады видеть — войдите, чтобы продолжить планировать своё путешествие</p>
+
+  <form id="signinForm" class="reg-form" novalidate>
+    <label for="email">Электронная почта</label>
+    <input id="email" name="email" type="email" placeholder="you@email.com" required>
+
+    <label for="password">Пароль</label>
+    <div class="password-row">
+      <input id="password" name="password" type="password" placeholder="Введите пароль" required>
+      <button type="button" id="togglePwd" aria-label="Показать пароль">Показать</button>
+    </div>
+
+    <div class="row-between">
+      <label class="remember">
+        <input type="checkbox" id="remember" name="remember"> Запомнить меня
+      </label>
+      <a class="forgot" href="forgot.html">Забыли пароль?</a>
+    </div>
+
+    <div class="form-error" id="err" aria-live="polite"></div>
+
+    <button type="submit" class="reg-btn">Войти</button>
+
+    <p class="reg-alt">Нет аккаунта? <a href="login-ru.html">Создать аккаунт</a></p>
+  </form>
+</main>
+
+<script>
+  // Показ/скрытие пароля
+  const toggle = document.getElementById('togglePwd');
+  const pwd = document.getElementById('password');
+  toggle.addEventListener('click', () => {
+    if (pwd.type === 'password') {
+      pwd.type = 'text';
+      toggle.textContent = 'Скрыть';
+    } else {
+      pwd.type = 'password';
+      toggle.textContent = 'Показать';
+    }
+  });
+  //Проверка мыла 
+  const form = document.getElementById('signinForm');
+  const err = document.getElementById('err');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    err.textContent = '';
+    const email = form.email.value.trim();
+    const password = form.password.value;
+
+    const messages = [];
+    if (!email) messages.push('Введите email.');
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) messages.push('Введите корректный email.');
+    if (!password) messages.push('Введите пароль.');
+
+    if (messages.length) {
+      err.textContent = messages.join(' ');
+      return;
+    }
+
+    err.style.color = 'green';
+    err.textContent = 'Успешно! Выполняется вход...';
+    setTimeout(() => {
+      window.location.href = 'index-en.html'; 
+    }, 900);
+  });
+</script>
+
+</body>
+</html>
