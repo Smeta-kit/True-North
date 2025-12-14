@@ -42,4 +42,3 @@ Includes detailed descriptions of:
 - Scandinavian capitals  
 - Adventure & cultural experiences
 
----# True-North
